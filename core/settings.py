@@ -122,6 +122,7 @@ REST_FRAMEWORK = {
         "rest_framework_simplejwt.authentication.JWTAuthentication"
     },
     # "DEFAULT_PERMISSIONS_CLASSES": ["rest_framework.permissions.IsAuthenticated"],
+    "DEFAULT_FILTER_BACKENDS": ["dj_rql.drf.RQLFilterBackend"],
 }
 # ==============================================================
 JAZZMIN_SETTINGS = {
