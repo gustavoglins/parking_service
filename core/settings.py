@@ -27,6 +27,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "rest_framework",
     "rest_framework_simplejwt",
+    "drf_spectacular",
     "authentication",
     "customers",
     "vehicles",
@@ -122,9 +123,17 @@ REST_FRAMEWORK = {
         "rest_framework_simplejwt.authentication.JWTAuthentication"
     },
     # "DEFAULT_PERMISSIONS_CLASSES": ["rest_framework.permissions.IsAuthenticated"],
-    "DEFAULT_FILTER_BACKENDS": ["dj_rql.drf.RQLFilterBackend"],
+    "DEFAULT_FILTER_BACKENDS": "dj_rql.drf.RQLFilterBackend",
+    "DEFAULT_SCHEMA_CLASS": "drf_spectacular.openapi.AutoSchema",
 }
-# ==============================================================
+
+SPECTACULAR_SETTINGS = {
+    "TITLE": "Parking Service API",
+    "DESCRIPTION": "API Oficial do Parking Service",
+    "VERSION": "1.0.0",
+}
+
+# =========================== JAZZMIN =================================
 JAZZMIN_SETTINGS = {
     # title of the window (Will default to current_admin_site.site_title if absent or None)
     "site_title": "Parking Service",
